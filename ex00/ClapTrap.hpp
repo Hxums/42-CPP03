@@ -6,11 +6,15 @@
 /*   By: hcissoko <hcissoko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 16:22:25 by hcissoko          #+#    #+#             */
-/*   Updated: 2026/07/12 12:40:18 by hcissoko         ###   ########.fr       */
+/*   Updated: 2026/07/14 18:53:13 by hcissoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
+
 #include <string>
+
 class ClapTrap
 {
     private:
@@ -28,3 +32,5 @@ class ClapTrap
         void    takeDamage(unsigned int amount);
         void    beRepaired(unsigned int amount);
 };
+
+#endif

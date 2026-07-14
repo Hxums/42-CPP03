@@ -6,7 +6,7 @@
 /*   By: hcissoko <hcissoko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 16:40:23 by hcissoko          #+#    #+#             */
-/*   Updated: 2026/07/12 12:47:25 by hcissoko         ###   ########.fr       */
+/*   Updated: 2026/07/14 19:01:32 by hcissoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ ClapTrap::ClapTrap(std::string name)
     this->hit_points_ = 10;
     this->energy_points_ = 10;
     this->attack_damage_ = 0;
-    std::cout << "Claptrap " << this->name_ << " created" << std::endl;
+    std::cout << "Claptrap " << this->name_ << " created ";
+    std::cout << "hit points = " << this->hit_points_ << " energy points = " << this->energy_points_ << " attack damage = " << this->attack_damage_ << std::endl;
 }
 
 ClapTrap::ClapTrap(void)
@@ -44,6 +45,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& rhs)
         this->energy_points_ = rhs.energy_points_;
         this->attack_damage_ = rhs.attack_damage_;
     }
+    return *this;
 }
 
 ClapTrap::~ClapTrap(void)
@@ -74,7 +76,14 @@ void    ClapTrap::takeDamage(unsigned int amount)
         std::cout << "Invalid damage amount (" << amount << ")" << std::endl;
         return;
     }
+    if (this->hit_points_ <= 0)
+    {
+        std::cout << "ClapTrap " << this->name_ << " is already dead/inactive!" << std::endl;
+        return;
+    }
     this->hit_points_ -= amount;
+    if (this->hit_points_ < 0)
+        this->hit_points_ = 0;
     std::cout << "ClapTrap " << this->name_ << " took " << amount << " points of damage. Hit points: " << this->hit_points_ << std::endl;
 }
 

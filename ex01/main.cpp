@@ -6,18 +6,19 @@
 /*   By: hcissoko <hcissoko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 17:31:55 by hcissoko          #+#    #+#             */
-/*   Updated: 2026/07/10 17:49:36 by hcissoko         ###   ########.fr       */
+/*   Updated: 2026/07/14 19:01:05 by hcissoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-    ClapTrap claptrap("John");
-    claptrap.attack("Target");
-    claptrap.takeDamage(10);
-    claptrap.beRepaired(10);
+    ScavTrap scavtrap("Jane");
+    scavtrap.attack("Target");
+    scavtrap.takeDamage(10);
+    scavtrap.beRepaired(10);
+    scavtrap.guardGate();
     return 0;
 }
