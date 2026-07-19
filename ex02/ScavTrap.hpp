@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hcissoko <hcissoko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/10 17:31:55 by hcissoko          #+#    #+#             */
-/*   Updated: 2026/07/15 04:06:57 by hcissoko         ###   ########.fr       */
+/*   Created: 2026/07/10 17:57:26 by hcissoko          #+#    #+#             */
+/*   Updated: 2026/07/14 18:57:33 by hcissoko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "ScavTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main(void)
+#include "ClapTrap.hpp"
+
+class ScavTrap: public ClapTrap
 {
-    ScavTrap scavtrap("Jane");
-    scavtrap.attack("Target");
-    scavtrap.takeDamage(10);
-    scavtrap.beRepaired(10);
-    scavtrap.guardGate();
-    return 0;
-}
+    private:
+    public:
+        ScavTrap();
+        ScavTrap(std::string name);
+        ScavTrap(const ScavTrap& src);
+        ScavTrap&   operator=(const ScavTrap& rhs);
+        void        attack(const std::string& target);
+        ~ScavTrap(void);
+    void    guardGate(void);
+};
+
+#endif
